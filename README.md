@@ -15,6 +15,9 @@ API基本情報：最大取得件数：3200、取得期間：1週間前まで
 
 ソース内で自分のベアラートークンを設定する必要あり（後述）
 
+参考：
+https://dev.twitter.com/rest/reference/get/search/tweets
+
 ## 実行例
 
 ```
@@ -42,4 +45,9 @@ get_bearer_token.pl
 ソース内の $consumer_key と $consumer_secret に自分のを設定して実行すると Bearer Token がでてくる。
 
 これを twigrep.pl の $bearer_token に設定する。
+
+参考：
+http://www.macminiosx.com/2013/03/twitterapplication-only_authen.html
+（ここのプログラムを参考に最小化）
+
 

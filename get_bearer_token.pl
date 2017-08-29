@@ -9,10 +9,8 @@ use JSON;
 my $consumer_key = '';
 my $consumer_secret = '';
 
-my $auth = "Basic ".encode_base64(uri_escape($consumer_key).":".uri_escape($consumer_secret));
-
 my $ua = LWP::UserAgent->new;
-$ua->default_header('Authorization' => $auth);
+$ua->default_header('Authorization' => "Basic ".encode_base64(uri_escape($consumer_key).":".uri_escape($consumer_secret)));
 $ua->default_header('Content-Type' => 'application/x-www-form-urlencoded;charset=UTF-8');
 
 my $url = 'https://api.twitter.com/oauth2/token';
@@ -24,6 +22,5 @@ if ($res->is_success) {
 } else {
     print $res->as_string."\n";
 }
-
 
 
